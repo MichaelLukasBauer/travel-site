@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack": "webpack --config webpack.config.js --mode development",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -33,6 +37,8 @@
     "postcss-import": "^11.1.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^3.0.0",
-    "postcss-simple-vars": "^4.1.0"
+    "postcss-simple-vars": "^4.1.0",
+    "webpack": "^4.3.0",
+    "webpack-cli": "^2.0.13"
   }
 }
