@@ -997,8 +997,13 @@ background-position: 36.69752421959096% 45.792307692307695%;
 @media (min-width: 800px) {
 
 .site-header {
+    position: fixed;
     background-color: rgba(47,85,114, 0.3)
 }
+
+    .site-header--dark {
+      background-color: rgba(23, 51, 72, 0.85);
+    }
   }
 
 @media (min-width: 800px) {
@@ -1018,7 +1023,9 @@ background-position: 36.69752421959096% 45.792307692307695%;
             transform-origin: 50% 0;
     background-color: #2f5572;
     padding: 25px 36px;
-    transition: background-color 0.3s linear ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   }
 
 @media (min-width: 800px) {
@@ -1028,6 +1035,11 @@ background-position: 36.69752421959096% 45.792307692307695%;
       -webkit-transform: translateX(0);
               transform: translateX(0)
   }
+
+      .site-header--dark .site-header__logo {
+        -webkit-transform: scale(0.57);
+                transform: scale(0.57);
+      }
   }
 
 .site-header__logo__graphic {
@@ -1214,6 +1226,10 @@ background-position: 36.69752421959096% 45.792307692307695%;
       font-size: 1rem;
       padding: 12px 0
   }
+
+      .primary-nav a.is-current-link {
+        color: #fabb69;
+      }
   }
 
 .reveal-item {
