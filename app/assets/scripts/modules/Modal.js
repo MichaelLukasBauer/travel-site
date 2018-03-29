@@ -4,7 +4,7 @@ class Modal {
   constructor() {
     this._openModalButton = $(".open-modal");
     this._modal = $(".modal");
-    this._closeModalButton = $(".model__close");
+    this._closeModalButton = $(".modal__close");
     this.events();
   }
 
@@ -13,9 +13,16 @@ class Modal {
     this._openModalButton.click(this.openModal.bind(this));
 
     // clicking close modal button
-    this._closeModalButton.click(this.closeModel.bind(this));
+    this._closeModalButton.click(this.closeModal.bind(this));
 
-    // pushes the esc key
+    // pushes any key
+    $(document).keyup(this.keyPressHandler.bind(this));
+  }
+
+  keyPressHandler(e) {
+    if (e.keyCode === 27) {
+      this.closeModal();
+    }
   }
 
   openModal() {
@@ -23,8 +30,7 @@ class Modal {
     return false; //prevent scrolling to top
   }
 
-  closeModel() {
-    console.log("close model ");
+  closeModal() {
     this._modal.removeClass("modal--is-visible");
   }
 }
