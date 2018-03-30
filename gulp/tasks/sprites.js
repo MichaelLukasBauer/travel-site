@@ -5,6 +5,11 @@ const del = require("del");
 const svg2png = require("gulp-svg2png");
 
 const config = {
+  shape: {
+    spacing: {
+      padding: 1
+    }
+  },
   mode: {
     css: {
       variables: {
